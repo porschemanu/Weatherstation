@@ -1,0 +1,176 @@
+﻿@page "/analyse"
+@using System.Globalization
+@using Weatherstation.Data.Models;
+@using Weatherstation.Data.UnitOfWork;
+@using Weatherstation.WebServer.Enums;
+
+<MudGrid Justify="Justify.Center">
+	<MudItem xs="12">
+		<MudText Typo="Typo.h1" Align="Align.Center">Aktuelle Werte</MudText>
+	</MudItem>
+	<MudItem xs="3">
+		<MudStack Row>
+			<MudCheckBox @bind-Checked="@smooth" Color="Color.Primary">Smooth</MudCheckBox>
+			<MudCheckBox @bind-Checked="@showDataLabels" Color="Color.Primary">Labels</MudCheckBox>
+		</MudStack>
+	</MudItem>
+	<MudItem xs="3">
+
+	</MudItem>
+	<MudItem xs="3">
+
+	</MudItem>
+	<MudItem xs="12">
+		<MudStack Row>
+			<MudButtonGroup>
+				<MudButton OnClick="OnClick_Today">Heute</MudButton>
+				<MudButton OnClick="OnClick_Yesterday">Gestern</MudButton>
+				<MudButton OnClick="OnClick_Week">7 Tage</MudButton>
+				<MudButton OnClick="OnClick_Month">30 Tage</MudButton>
+			</MudButtonGroup>
+		</MudStack>
+	</MudItem>
+	<MudItem xs="10">
+		<MudPaper Elevation="2">
+			<RadzenChart>
+				@switch (analyseTimespan)
+				{
+					case AnalyseTimespan.Today:
+					case AnalyseTimespan.Yesterday:
+						<RadzenLineSeries Smooth="@smooth" Data="@_temp" CategoryProperty="Timestamp" Title="Wert" ValueProperty="Value">
+							<RadzenMarkers MarkerType="MarkerType.Square" />
+							<RadzenSeriesDataLabels Visible="@showDataLabels" />
+						</RadzenLineSeries>
+						break;
+					case AnalyseTimespan.Week:
+					case AnalyseTimespan.Month:
+						<RadzenLineSeries Smooth="@smooth" Data="@_avg" CategoryProperty="Timestamp" Title="Avg" ValueProperty="Value">
+							<RadzenMarkers MarkerType="MarkerType.Square" />
+							<RadzenSeriesDataLabels Visible="@showDataLabels" />
+						</RadzenLineSeries>
+						<RadzenLineSeries Smooth="@smooth" Data="@_min" CategoryProperty="Timestamp" Title="Min" LineType="LineType.Dashed" ValueProperty="Value">
+							<RadzenMarkers MarkerType="MarkerType.Circle" />
+							<RadzenSeriesDataLabels Visible="@showDataLabels" />
+						</RadzenLineSeries>
+						<RadzenLineSeries Smooth="@smooth" Data="@_max" CategoryProperty="Timestamp" Title="Max" LineType="LineType.Dashed" ValueProperty="Value">
+							<RadzenMarkers MarkerType="MarkerType.Circle" />
+							<RadzenSeriesDataLabels Visible="@showDataLabels" />
+						</RadzenLineSeries>
+						break;
+					default:
+						break;
+				}
+				@switch (analyseTimespan)
+				{
+					case AnalyseTimespan.Today:
+					case AnalyseTimespan.Yesterday:
+						<RadzenCategoryAxis Formatter="@FormatDay" />
+						break;
+					case AnalyseTimespan.Week:
+						<RadzenCategoryAxis Formatter="@FormatWeek" />
+						break;
+					case AnalyseTimespan.Month:
+						<RadzenCategoryAxis Formatter="@FormatMonth" />
+						break;
+					default:
+						break;
+				}
+
+			</RadzenChart>
+		</MudPaper>
+	</MudItem>
+
+</MudGrid>
+
+@code {
+
+	AnalyseTimespan analyseTimespan { get; set; }
+
+	List<WeatherEntry> _avg { get; set; }
+	List<WeatherEntry> _min { get; set; }
+	List<WeatherEntry> _max { get; set; }
+	List<WeatherEntry> _temp { get; set; }
+
+	private void OnClick_Today()
+	{
+		analyseTimespan = AnalyseTimespan.Today;
+		using (UnitOfWork unitOfWork = new())
+		{
+			_temp = unitOfWork.GetDay(WeatherValueType.Temperature, DateTime.Now);
+		}
+		StateHasChanged();
+	}
+
+	private void OnClick_Yesterday()
+	{
+		analyseTimespan = AnalyseTimespan.Today;
+		using (UnitOfWork unitOfWork = new())
+		{
+			_temp = unitOfWork.GetDay(WeatherValueType.Temperature, DateTime.Now.AddDays(-1));
+		}
+		StateHasChanged();
+	}
+
+	private void OnClick_Week()
+	{
+		analyseTimespan = AnalyseTimespan.Week;
+		using (UnitOfWork unitOfWork = new())
+		{
+			(_avg, _min, _max) = unitOfWork.Get7Days(WeatherValueType.Temperature, DateOnly.FromDateTime(DateTime.Now));
+		}
+		StateHasChanged();
+	}
+
+	private void OnClick_Month()
+	{
+		analyseTimespan = AnalyseTimespan.Month;
+		using (UnitOfWork unitOfWork = new())
+		{
+			(_avg, _min, _max) = unitOfWork.Get30Days(WeatherValueType.Temperature, DateOnly.FromDateTime(DateTime.Now));
+		}
+		StateHasChanged();
+	}
+
+	protected override void OnAfterRender(bool firstRender)
+	{
+		using (UnitOfWork unitOfWork = new())
+		{
+			(_avg, _min, _max) = unitOfWork.Get7Days(WeatherValueType.Temperature, DateOnly.FromDateTime(DateTime.Now));
+		}
+		base.OnAfterRender(firstRender);
+	}
+
+
+	bool smooth = false;
+	bool showDataLabels = false;
+
+	string FormatDay(object value)
+	{
+		if (value != null)
+		{
+			return Convert.ToDateTime(value).ToString("hh:mm:ss");
+		}
+
+		return string.Empty;
+	}
+
+	string FormatWeek(object value)
+	{
+		if (value != null)
+		{
+			return Convert.ToDateTime(value).ToString("ddd");
+		}
+
+		return string.Empty;
+	}
+
+	string FormatMonth(object value)
+	{
+		if (value != null)
+		{
+			return Convert.ToDateTime(value).ToString("d");
+		}
+
+		return string.Empty;
+	}
+}

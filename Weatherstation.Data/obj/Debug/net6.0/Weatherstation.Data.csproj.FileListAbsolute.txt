@@ -1,0 +1,14 @@
+C:\Users\Admin\Source\Repos\Weatherstation\Weatherstation.Data\obj\Debug\net6.0\Weatherstation.Data.csproj.AssemblyReference.cache
+C:\Users\Admin\Source\Repos\Weatherstation\Weatherstation.Data\obj\Debug\net6.0\Weatherstation.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\Source\Repos\Weatherstation\Weatherstation.Data\obj\Debug\net6.0\Weatherstation.Data.AssemblyInfoInputs.cache
+C:\Users\Admin\Source\Repos\Weatherstation\Weatherstation.Data\obj\Debug\net6.0\Weatherstation.Data.AssemblyInfo.cs
+C:\Users\Admin\Source\Repos\Weatherstation\Weatherstation.Data\obj\Debug\net6.0\Weatherstation.Data.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Source\Repos\Weatherstation\Weatherstation.Data\bin\Debug\net6.0\Weatherstation.Data.deps.json
+C:\Users\Admin\Source\Repos\Weatherstation\Weatherstation.Data\bin\Debug\net6.0\Weatherstation.Data.runtimeconfig.json
+C:\Users\Admin\Source\Repos\Weatherstation\Weatherstation.Data\bin\Debug\net6.0\Weatherstation.Data.dll
+C:\Users\Admin\Source\Repos\Weatherstation\Weatherstation.Data\bin\Debug\net6.0\Weatherstation.Data.pdb
+C:\Users\Admin\Source\Repos\Weatherstation\Weatherstation.Data\obj\Debug\net6.0\Weatherstation.Data.dll
+C:\Users\Admin\Source\Repos\Weatherstation\Weatherstation.Data\obj\Debug\net6.0\refint\Weatherstation.Data.dll
+C:\Users\Admin\Source\Repos\Weatherstation\Weatherstation.Data\obj\Debug\net6.0\Weatherstation.Data.pdb
+C:\Users\Admin\Source\Repos\Weatherstation\Weatherstation.Data\obj\Debug\net6.0\Weatherstation.Data.genruntimeconfig.cache
+C:\Users\Admin\Source\Repos\Weatherstation\Weatherstation.Data\obj\Debug\net6.0\ref\Weatherstation.Data.dll

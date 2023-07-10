@@ -1,0 +1,37 @@
+﻿@inject CurrentData _cd;
+@page "/"
+@using Weatherstation.WebServer.Components
+@using Weatherstation.WebServer.Data;
+
+<MudGrid Justify="Justify.Center">
+    <MudItem xs="12">
+        <MudText Typo="Typo.h1" Align="Align.Center">Aktuelle Werte</MudText>
+    </MudItem>
+   <MudItem xs="3">
+        <DashboardItem Title="Temperatur" Value="_cd.Temperature.Value" />
+    </MudItem>
+	<MudItem xs="3">
+        <DashboardItem Title="Luftfeuchtigkeit" Value="_cd.Humidity.Value" />
+    </MudItem>
+	<MudItem xs="3">
+		<DashboardItem Title="Luftdruck" Value="_cd.Airpressure.Value" />
+	</MudItem>
+</MudGrid>
+
+@code {
+
+	private async void AutoRefresh()
+	{
+		await InvokeAsync(() =>
+	{
+		StateHasChanged();
+	});
+	}
+
+	protected override void OnAfterRender(bool firstRender)
+	{
+		_cd.OnDataChanged += AutoRefresh;
+		base.OnAfterRender(firstRender);
+	}
+
+}

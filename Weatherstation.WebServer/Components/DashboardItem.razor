@@ -1,0 +1,24 @@
+﻿<MudPaper Elevation="2" Style="border-radius:5vh;">
+	<MudGrid>
+		<MudItem xs="12">
+			<MudText Align=Align.Center Typo="Typo.h4">
+				@Title
+			</MudText>
+		</MudItem>
+		<MudItem xs="12">
+			<MudText Align=Align.Center Typo="Typo.h1">
+				@Value
+			</MudText>
+		</MudItem>
+	</MudGrid>
+</MudPaper>
+
+@code {
+
+	[Parameter]
+	public string Title { get; set; } = "Test";
+
+	[Parameter]
+	public double Value { get; set; } = 0;
+
+}
