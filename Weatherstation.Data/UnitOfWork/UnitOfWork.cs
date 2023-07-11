@@ -6,19 +6,19 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Weatherstation.Data.Context;
 using Weatherstation.Data.Enums;
+using Weatherstation.Data.Interfaces;
 using Weatherstation.Data.Models;
 using Weatherstation.Data.Repositories;
 
 namespace Weatherstation.Data.UnitOfWork
 {
-	public class UnitOfWork : IDisposable
+	public class UnitOfWork : IUnitOfWork,IDisposable
 	{
 		private readonly WeatherDataContext _context;
 		private WeatherEntryRepo _repo;
 
 		public UnitOfWork()
 		{
-
 			DbContextOptionsBuilder<WeatherDataContext> dbContextOptionsBuilder = new DbContextOptionsBuilder<WeatherDataContext>();
 			dbContextOptionsBuilder.UseSqlServer("Server=localhost;database=BBS_Weatherstation;trusted_connection=true;Encrypt=false;");
 

@@ -1,0 +1,48 @@
+﻿<Properties StartupConfiguration="{C9BB2339-01DC-4CAC-B7CB-752ABBB426C0}|Default">
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workbench ActiveDocument="Weatherstation.Data/UnitOfWork/MockUnitOfWork.cs">
+    <Files>
+      <File FileName="Weatherstation.Data/Repositories/WeatherEntryRepo.cs" Line="57" Column="9" />
+      <File FileName="Weatherstation.Data/Interfaces/IWeatherEntryRepo.cs" Line="10" Column="6" />
+      <File FileName="Weatherstation.Data/Repositories/MockRepo.cs" Line="8" Column="51" />
+      <File FileName="Weatherstation.MQTT/Programm.cs" Line="52" Column="49" />
+      <File FileName="Weatherstation.Data/Interfaces/IUnitOfWork.cs" Line="9" Column="55" />
+      <File FileName="Weatherstation.Data/UnitOfWork/UnitOfWork.cs" Line="15" Column="39" />
+      <File FileName="Weatherstation.WebServer/Program.cs" Line="10" Column="34" />
+      <File FileName="Weatherstation.WebServer/Pages/Index.razor" Line="1" Column="20" />
+      <File FileName="Weatherstation.Data/Context/WeatherDataContext.cs" Line="3" Column="19" />
+      <File FileName="Weatherstation.Data/UnitOfWork/MockUnitOfWork.cs" Line="48" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Weatherstation" expanded="True">
+            <Node name="Weatherstation.Data">
+              <Node name="Context" expanded="True" />
+              <Node name="Interfaces" expanded="True" />
+              <Node name="UnitOfWork">
+                <Node name="MockUnitOfWork.cs" selected="True" />
+              </Node>
+            </Node>
+            <Node name="Weatherstation.DataGenerator">
+              <Node name="Properties" expanded="True" />
+            </Node>
+            <Node name="Weatherstation.WebServer">
+              <Node name="Data" expanded="True" />
+              <Node name="Pages" expanded="True">
+                <Node name="Error.cshtml" expanded="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.Weatherstation.WebServer PreferredExecutionTarget="/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app" />
+  <Xamarin.Addins.Core.Project ActiveDebugTarget="MyAppleMacCatalystID" />
+</Properties>

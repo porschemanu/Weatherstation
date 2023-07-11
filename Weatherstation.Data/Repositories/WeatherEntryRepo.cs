@@ -36,7 +36,15 @@ namespace Weatherstation.Data.Repositories
 
         public async Task<WeatherEntry> ReadLastAsync(WeatherValueType weatherValueType)
         {
-            return await _context.WeatherEntries.Where(x => x.ValueType == weatherValueType).OrderBy(x => x.Timestamp).LastOrDefaultAsync();
+            WeatherEntry? _ = await _context.WeatherEntries.Where(x => x.ValueType == weatherValueType).OrderBy(x => x.Timestamp).LastOrDefaultAsync();
+            if (_ != null)
+            {
+                return _;
+            }
+            else
+            {
+                return new WeatherEntry();
+            }
         }
 
         public List<WeatherEntry> Read(WeatherValueType weatherValueType)

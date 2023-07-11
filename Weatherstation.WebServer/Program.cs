@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 using MudBlazor.Services;
+using Weatherstation.Data.Interfaces;
 using Weatherstation.Data.UnitOfWork;
 using Weatherstation.WebServer.Data;
 
@@ -10,7 +11,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
 builder.Services.AddSingleton<CurrentData>();
-builder.Services.AddTransient<UnitOfWork>();
+builder.Services.AddTransient<IUnitOfWork ,UnitOfWork>();
 builder.Services.AddMudServices();
 
 
