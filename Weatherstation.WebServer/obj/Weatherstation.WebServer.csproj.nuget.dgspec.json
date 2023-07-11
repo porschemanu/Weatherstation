@@ -1,27 +1,26 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Admin\\Source\\Repos\\Weatherstation\\Weatherstation.WebServer\\Weatherstation.WebServer.csproj": {}
+    "/Users/manuelyates/Desktop/BBS_Wetterstation/Weatherstation/Weatherstation.WebServer/Weatherstation.WebServer.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Admin\\Source\\Repos\\Weatherstation\\Weatherstation.Data\\Weatherstation.Data.csproj": {
+    "/Users/manuelyates/Desktop/BBS_Wetterstation/Weatherstation/Weatherstation.Data/Weatherstation.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Admin\\Source\\Repos\\Weatherstation\\Weatherstation.Data\\Weatherstation.Data.csproj",
+        "projectUniqueName": "/Users/manuelyates/Desktop/BBS_Wetterstation/Weatherstation/Weatherstation.Data/Weatherstation.Data.csproj",
         "projectName": "Weatherstation.Data",
-        "projectPath": "C:\\Users\\Admin\\Source\\Repos\\Weatherstation\\Weatherstation.Data\\Weatherstation.Data.csproj",
-        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Admin\\Source\\Repos\\Weatherstation\\Weatherstation.Data\\obj\\",
+        "projectPath": "/Users/manuelyates/Desktop/BBS_Wetterstation/Weatherstation/Weatherstation.Data/Weatherstation.Data.csproj",
+        "packagesPath": "/Users/manuelyates/.nuget/packages/",
+        "outputPath": "/Users/manuelyates/Desktop/BBS_Wetterstation/Weatherstation/Weatherstation.Data/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/manuelyates/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "/usr/local/share/dotnet/library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -77,37 +76,36 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.304/RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Admin\\Source\\Repos\\Weatherstation\\Weatherstation.WebServer\\Weatherstation.WebServer.csproj": {
+    "/Users/manuelyates/Desktop/BBS_Wetterstation/Weatherstation/Weatherstation.WebServer/Weatherstation.WebServer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Admin\\Source\\Repos\\Weatherstation\\Weatherstation.WebServer\\Weatherstation.WebServer.csproj",
+        "projectUniqueName": "/Users/manuelyates/Desktop/BBS_Wetterstation/Weatherstation/Weatherstation.WebServer/Weatherstation.WebServer.csproj",
         "projectName": "Weatherstation.WebServer",
-        "projectPath": "C:\\Users\\Admin\\Source\\Repos\\Weatherstation\\Weatherstation.WebServer\\Weatherstation.WebServer.csproj",
-        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Admin\\Source\\Repos\\Weatherstation\\Weatherstation.WebServer\\obj\\",
+        "projectPath": "/Users/manuelyates/Desktop/BBS_Wetterstation/Weatherstation/Weatherstation.WebServer/Weatherstation.WebServer.csproj",
+        "packagesPath": "/Users/manuelyates/.nuget/packages/",
+        "outputPath": "/Users/manuelyates/Desktop/BBS_Wetterstation/Weatherstation/Weatherstation.WebServer/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/manuelyates/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\sdk\\7.0.304\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
+          "/usr/local/share/dotnet/library-packs": {},
+          "/usr/local/share/dotnet/sdk/7.0.304/Sdks/Microsoft.NET.Sdk.Web/library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Admin\\Source\\Repos\\Weatherstation\\Weatherstation.Data\\Weatherstation.Data.csproj": {
-                "projectPath": "C:\\Users\\Admin\\Source\\Repos\\Weatherstation\\Weatherstation.Data\\Weatherstation.Data.csproj"
+              "/Users/manuelyates/Desktop/BBS_Wetterstation/Weatherstation/Weatherstation.Data/Weatherstation.Data.csproj": {
+                "projectPath": "/Users/manuelyates/Desktop/BBS_Wetterstation/Weatherstation/Weatherstation.Data/Weatherstation.Data.csproj"
               }
             }
           }
@@ -150,7 +148,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.304/RuntimeIdentifierGraph.json"
         }
       }
     }
